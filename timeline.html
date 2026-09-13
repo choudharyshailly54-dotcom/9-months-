@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our 9 Months | Timeline</title>
+  <style>
+    :root {
+      --glass-bg: rgba(255, 255, 255, 0.07);
+      --glass-border: rgba(255, 255, 255, 0.18);
+      --accent: #ffb3c6;
+      --accent-glow: rgba(255, 179, 198, 0.35);
+      --text: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+    body { background-color: #030303; color: var(--text); min-height: 100vh; overflow-x: hidden; }
+
+    #bg-video {
+      position: fixed; top: 50%; left: 50%; min-width: 100%; min-height: 100%;
+      z-index: -2; transform: translate(-50%, -50%); object-fit: cover; filter: brightness(0.5);
+    }
+    .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.45); z-index: -1; }
+
+    nav {
+      position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
+      display: flex; gap: 12px; background: var(--glass-bg); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--glass-border); padding: 10px 20px; border-radius: 40px; z-index: 100;
+    }
+    nav a { color: var(--text); text-decoration: none; font-size: 0.9rem; font-weight: 500; padding: 8px 16px; border-radius: 20px; transition: 0.3s; }
+    nav a.active, nav a:hover { background: var(--accent); color: #000; box-shadow: 0 0 15px var(--accent-glow); }
+
+    .container { padding: 110px 20px 60px; max-width: 850px; margin: 0 auto; }
+    
+    .timeline-card {
+      background: var(--glass-bg); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+      border: 1px solid var(--glass-border); border-radius: 22px; padding: 25px 30px; margin-bottom: 20px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3); transition: transform 0.3s ease;
+    }
+    .timeline-card:hover { transform: translateY(-3px); }
+    .month-tag { font-size: 0.85rem; font-weight: 700; color: var(--accent); letter-spacing: 1px; margin-bottom: 8px; text-transform: uppercase; }
+    .title { font-size: 1.3rem; margin-bottom: 10px; font-weight: 600; }
+    .desc { font-size: 1rem; line-height: 1.7; opacity: 0.9; }
+
+    .footer-note {
+      background: var(--glass-bg); backdrop-filter: blur(20px); border: 1px solid var(--glass-border);
+      border-radius: 22px; padding: 30px; text-align: center; margin-top: 30px;
+    }
+    .audio-control {
+      position: fixed; bottom: 20px; right: 20px; background: var(--glass-bg); backdrop-filter: blur(12px);
+      border: 1px solid var(--glass-border); padding: 10px 18px; border-radius: 30px; display: flex; align-items: center; gap: 10px; z-index: 100;
+    }
+    .audio-btn { background: var(--accent); border: none; width: 34px; height: 34px; border-radius: 50%; cursor: pointer; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <video autoplay loop muted playsinline id="bg-video"><source src="From Klickpin.com- 1128362881683401126-pin-id-1128362881683401126.mp4" type="video/mp4"></video>
+  <div class="overlay"></div>
+
+  <audio id="bg-audio" loop><source src="Thoda Thoda Pyaar Stebin Ben _ Kumaar _ Nilesh Ahuja _ Sidharth Malhotra, Neha S _ Lyrics Store 04.mp4" type="audio/mpeg"></audio>
+  <div class="audio-control"><span style="font-size:0.85rem">🎵 Sound</span><button class="audio-btn" id="audio-toggle">▶</button></div>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="timeline.html" class="active">9 Months</a>
+    <a href="reasons.html">Reasons</a>
+    <a href="letter.html">Letter</a>
+  </nav>
+
+  <div class="container">
+    <h1 style="text-align: center; margin-bottom: 30px; font-size: 2.2rem;">Nine Chapters Of Us</h1>
+
+    <div class="timeline-card">
+      <div class="month-tag">Month 1 • 14/12/25 - 14/01/26</div>
+      <div class="title">The Beginning & The New Year</div>
+      <div class="desc">We navigated an awkwardly paced yet attached first month together. Finding our rhythm was new, but stepping into the New Year by your side set everything in motion.</div>
+    </div>
+
+    <div class="timeline-card">
+      <div class="month-tag">Month 2 • 14/01/26 - 14/02/26</div>
+      <div class="title">Valentine's & Vulnerability</div>
+      <div class="desc">We celebrated our very first Valentine's week together. It was also the month where I saw your deeper, softer emotional side after the loss of your dada ji. Seeing your vulnerability made me feel even closer to you.</div>
+    </div>
+
+    <div class="timeline-card">
+      <div class="month-tag">Month 3 • 14/02/26 - 14/03/26</div>
+      <div class="title">The Struggles With Time</div>
+      <div class="desc">Real-life hurdles started creeping in. We were constantly struggling with busy schedules, distance, and finding enough quality time for each other, but we kept hanging on.</div>
+    </div>
+
+    <div class="timeline-card">
+      <div class="month-tag">Month 4 • 14/03/26 - 14/04/26</div>
+      <div class="title">Growing Pains & Birthdays</div>
+      <div class="desc">We faced our first major argument on March 23rd, followed by your birthday on the 31st. It marked a necessary chapter where we truly began understanding each other's deeper needs, desires, and personal boundaries.</div>
+    </div>
+
+    <div class="timeline-card">
+      <div class="month-tag">Month 5 • 14/04/26 - 14/05/26</div>
+      <div class="title">The Calm & Peaceful Season</div>
+      <div class="desc">Our purest and most peaceful month—no tension, no unnecessary worries, just warm comfort, mutual understanding, and quiet happiness.</div>
+    </div>
+
+    <div class="timeline-card">
+      <div class="month-tag">Month 6 • 14/05/26 - 14/06/26</div>
+      <div class="title">The Storm & First Breakup</div>
+      <div class="desc">The most painful phase we ever endured. Shattered trust, exam results, your move to Hyderabad for PW, past misunderstandings, and our first actual breakup. It tested us to our absolute limits.</div>
+    </div>
+
+    <div class="timeline-card">
+      <div class="month-tag">Month 7 • 14/06/26 - 14/07/26</div>
+      <div class="title">Finding Myself & Finding You Again</div>
+      <div class="desc">A tough recovery phase. While you settled into your PG, I worked on reclaiming my individuality and strength. Slowly but surely, the heart pulled us back into talking again.</div>
+    </div>
+
+    <div class="timeline-card">
+      <div class="month-tag">Month 8 • 14/07/26 - 14/08/26</div>
+      <div class="title">Clash of Mindsets</div>
+      <div class="desc">Everything looked alright on the outside, but inside, our differing ideologies and mindsets crashed intensely. We had to learn how to love each other despite our differences.</div>
+    </div>
+
+    <div class="timeline-card">
+      <div class="month-tag">Month 9 • 14/08/26 - 14/09/26</div>
+      <div class="title">Birthday Month & Rebuilding</div>
+      <div class="desc">My birthday month brought another heartbreaking scenario to work through, forcing us to face hard realities once more. Yet, through every storm, we made it to our 9-month milestone.</div>
+    </div>
+
+    <div class="footer-note">
+      <p style="font-size: 1.1rem; line-height: 1.8; color: var(--accent);">
+        Every time we argued, and every time I tried to step back or felt overwhelmed... you held on. You held our relationship together and fought for us in every circumstance. Thank you so much, Tanush 🧿💕
+      </p>
+    </div>
+  </div>
+
+  <script>
+    const audio = document.getElementById('bg-audio');
+    const audioBtn = document.getElementById('audio-toggle');
+    audioBtn.onclick = () => { if (audio.paused) { audio.play(); audioBtn.textContent = '❚❚'; } else { audio.pause(); audioBtn.textContent = '▶'; } };
+  </script>
+</body>
+</html>
