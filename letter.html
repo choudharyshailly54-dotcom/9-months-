@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Letter For Tanush</title>
+  <style>
+    :root {
+      --glass-bg: rgba(255, 255, 255, 0.07);
+      --glass-border: rgba(255, 255, 255, 0.18);
+      --accent: #ffb3c6;
+      --accent-glow: rgba(255, 179, 198, 0.35);
+      --text: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+    body { background-color: #030303; color: var(--text); min-height: 100vh; overflow-x: hidden; }
+
+    #bg-video {
+      position: fixed; top: 50%; left: 50%; min-width: 100%; min-height: 100%;
+      z-index: -2; transform: translate(-50%, -50%); object-fit: cover; filter: brightness(0.5);
+    }
+    .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.45); z-index: -1; }
+
+    nav {
+      position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
+      display: flex; gap: 12px; background: var(--glass-bg); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--glass-border); padding: 10px 20px; border-radius: 40px; z-index: 100;
+    }
+    nav a { color: var(--text); text-decoration: none; font-size: 0.9rem; font-weight: 500; padding: 8px 16px; border-radius: 20px; transition: 0.3s; }
+    nav a.active, nav a:hover { background: var(--accent); color: #000; box-shadow: 0 0 15px var(--accent-glow); }
+
+    .container { padding: 110px 20px 60px; max-width: 750px; margin: 0 auto; }
+    
+    .letter-card {
+      background: var(--glass-bg); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--glass-border); border-radius: 28px; padding: 45px 35px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5); line-height: 1.9; font-size: 1.05rem; opacity: 0.95;
+    }
+
+    .audio-control {
+      position: fixed; bottom: 20px; right: 20px; background: var(--glass-bg); backdrop-filter: blur(12px);
+      border: 1px solid var(--glass-border); padding: 10px 18px; border-radius: 30px; display: flex; align-items: center; gap: 10px; z-index: 100;
+    }
+    .audio-btn { background: var(--accent); border: none; width: 34px; height: 34px; border-radius: 50%; cursor: pointer; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <video autoplay loop muted playsinline id="bg-video"><source src="bg.mp4" type="video/mp4"></video>
+  <div class="overlay"></div>
+
+  <audio id="bg-audio" loop><source src="Thoda Thoda Pyaar Stebin Ben _ Kumaar _ Nilesh Ahuja _ Sidharth Malhotra, Neha S _ Lyrics Store 04.mp4" type="audio/mpeg"></audio>
+  <div class="audio-control"><span style="font-size:0.85rem">🎵 Sound</span><button class="audio-btn" id="audio-toggle">▶</button></div>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="timeline.html">9 Months</a>
+    <a href="reasons.html">Reasons</a>
+    <a href="letter.html" class="active">Letter</a>
+  </nav>
+
+  <div class="container">
+    <div class="letter-card">
+      <h1 style="font-size: 2rem; margin-bottom: 25px; color: var(--accent);">Dearest Tanush,</h1>
+      
+      <p style="margin-bottom: 18px;">
+        Nine months with you have felt like an entire journey of lessons, deep connection, and unconditional growth. Looking back at everything we've experienced since December 14th, it's clear that we haven't had the easiest path. We've fought, we've faced distance, and we've hurt, but we've also loved immensely.
+      </p>
+
+      <p style="margin-bottom: 18px;">
+        Every single challenge we encountered proved one thing above all: your determination to hold my hand and stand by our relationship, even when things got dark. Thank you for protecting our bond, for showing up when it mattered most, for being patient with me, and for fighting for us when I couldn't.
+      </p>
+
+      <p style="margin-bottom: 25px;">
+        I don't know what tomorrow brings, but I know that I am grateful for these 9 months with you. Happy 9-Month Anniversary, my favorite person.
+      </p>
+
+      <p style="text-align: right; font-weight: bold; color: var(--accent); font-size: 1.1rem;">
+        Always yours,<br>Shailly 🧿💕
+      </p>
+    </div>
+  </div>
+
+  <script>
+    const audio = document.getElementById('bg-audio');
+    const audioBtn = document.getElementById('audio-toggle');
+    audioBtn.onclick = () => { if (audio.paused) { audio.play(); audioBtn.textContent = '❚❚'; } else { audio.pause(); audioBtn.textContent = '▶'; } };
+  </script>
+</body>
+</html>
