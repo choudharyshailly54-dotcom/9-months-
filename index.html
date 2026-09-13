@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>9 Months With You | Tanush & Shailly</title>
+  <style>
+    :root {
+      --glass-bg: rgba(255, 255, 255, 0.07);
+      --glass-border: rgba(255, 255, 255, 0.18);
+      --accent: #ffb3c6;
+      --accent-glow: rgba(255, 179, 198, 0.35);
+      --text: #ffffff;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+    body { background-color: #030303; color: var(--text); min-height: 100vh; overflow-x: hidden; }
+
+    #bg-video {
+      position: fixed; top: 50%; left: 50%; min-width: 100%; min-height: 100%;
+      z-index: -2; transform: translate(-50%, -50%); object-fit: cover; filter: brightness(0.5);
+    }
+    .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.45); z-index: -1; }
+
+    nav {
+      position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
+      display: flex; gap: 12px; background: var(--glass-bg); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--glass-border); padding: 10px 20px; border-radius: 40px; z-index: 100;
+    }
+    nav a { color: var(--text); text-decoration: none; font-size: 0.9rem; font-weight: 500; padding: 8px 16px; border-radius: 20px; transition: 0.3s; }
+    nav a.active, nav a:hover { background: var(--accent); color: #000; box-shadow: 0 0 15px var(--accent-glow); }
+
+    .container { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 100px 20px 60px; max-width: 800px; margin: 0 auto; text-align: center; }
+    
+    .glass-card {
+      background: var(--glass-bg); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--glass-border); border-radius: 28px; padding: 40px 30px; width: 100%;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5); margin-bottom: 25px;
+    }
+
+    h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 10px; letter-spacing: -0.5px; }
+    .subtitle { font-size: 1.1rem; color: var(--accent); margin-bottom: 30px; letter-spacing: 1px; }
+
+    .counter-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin: 25px 0; }
+    .counter-item { background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); padding: 18px 10px; border-radius: 18px; }
+    .counter-num { font-size: 2rem; font-weight: 700; color: var(--accent); }
+    .counter-label { font-size: 0.8rem; opacity: 0.7; text-transform: uppercase; margin-top: 5px; }
+
+    .audio-control {
+      position: fixed; bottom: 20px; right: 20px; background: var(--glass-bg); backdrop-filter: blur(12px);
+      border: 1px solid var(--glass-border); padding: 10px 18px; border-radius: 30px; display: flex; align-items: center; gap: 10px; z-index: 100;
+    }
+    .audio-btn { background: var(--accent); border: none; width: 34px; height: 34px; border-radius: 50%; cursor: pointer; font-weight: bold; }
+    .btn-next { display: inline-block; background: var(--accent); color: #000; text-decoration: none; padding: 14px 32px; border-radius: 30px; font-weight: 600; margin-top: 20px; transition: 0.3s; }
+    .btn-next:hover { transform: translateY(-3px); box-shadow: 0 5px 20px var(--accent-glow); }
+  </style>
+</head>
+<body>
+  <video autoplay loop muted playsinline id="bg-video"><source src="From Klickpin.com- 1128362881683401126-pin-id-1128362881683401126.mp4" type="video/mp4"></video>
+  <div class="overlay"></div>
+
+  <audio id="bg-audio" loop><source src="Thoda Thoda Pyaar Stebin Ben _ Kumaar _ Nilesh Ahuja _ Sidharth Malhotra, Neha S _ Lyrics Store 04.mp4" type="audio/mpeg"></audio>
+  <div class="audio-control"><span style="font-size:0.85rem">🎵 Sound</span><button class="audio-btn" id="audio-toggle">▶</button></div>
+
+  <nav>
+    <a href="index.html" class="active">Home</a>
+    <a href="timeline.html">9 Months</a>
+    <a href="reasons.html">Reasons</a>
+    <a href="letter.html">Letter</a>
+  </nav>
+
+  <div class="container">
+    <div class="glass-card">
+      <h1>9 Months Together 🧿</h1>
+      <p class="subtitle">14.12.2025 • 14.09.2026</p>
+      
+      <div class="counter-grid">
+        <div class="counter-item"><div class="counter-num" id="d">0</div><div class="counter-label">Days</div></div>
+        <div class="counter-item"><div class="counter-num" id="h">0</div><div class="counter-label">Hours</div></div>
+        <div class="counter-item"><div class="counter-num" id="m">0</div><div class="counter-label">Mins</div></div>
+        <div class="counter-item"><div class="counter-num" id="s">0</div><div class="counter-label">Secs</div></div>
+      </div>
+
+      <p style="line-height: 1.8; opacity: 0.9; margin-top: 20px; font-size: 1.05rem;">
+        Through every long conversation, every disagreement, every tears shed, and every battle fought—we chose each other. Here is a reflection of our 9-month journey.
+      </p>
+
+      <a href="timeline.html" class="btn-next">Explore Our Journey →</a>
+    </div>
+  </div>
+
+  <script>
+    const audio = document.getElementById('bg-audio');
+    const audioBtn = document.getElementById('audio-toggle');
+    audioBtn.onclick = () => { if (audio.paused) { audio.play(); audioBtn.textContent = '❚❚'; } else { audio.pause(); audioBtn.textContent = '▶'; } };
+
+    const start = new Date('2025-12-14T00:00:00');
+    function update() {
+      const diff = new Date() - start;
+      document.getElementById('d').innerText = Math.floor(diff / (1000 * 60 * 60 * 24));
+      document.getElementById('h').innerText = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      document.getElementById('m').innerText = Math.floor((diff / 1000 / 60) % 60);
+      document.getElementById('s').innerText = Math.floor((diff / 1000) % 60);
+    }
+    setInterval(update, 1000); update();
+  </script>
+</body>
+</html>
